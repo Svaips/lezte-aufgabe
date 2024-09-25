@@ -1,0 +1,8 @@
+#cloud-config
+users:
+  - name: svaips
+    groups: sudo
+    shell: /bin/bash
+    sudo: 'ALL=(ALL) NOPASSWD:ALL'
+    ssh-authorized-keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFC8U7xAE3s+SFDd1QLnET6pSO2b2P7moyxWiag7iSlT svaips@test-vm

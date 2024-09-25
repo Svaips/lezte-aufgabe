@@ -1,0 +1,10 @@
+---
+- name: Установка Nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: Создание страницы приветствия
+  copy:
+    dest: /var/www/html/index.html
+    content: "Hello from {{ inventory_hostname }}!"

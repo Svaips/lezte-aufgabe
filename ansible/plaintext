@@ -1,0 +1,12 @@
+   ansible/
+   ├── roles/
+   │   ├── setup_vm/
+   │   │   ├── tasks/
+   │   │   │   └── main.yml
+   │   ├── setup_nginx_proxy/
+   │   │   ├── tasks/
+   │   │   │   └── main.yml
+   │   └── setup_nginx/
+   │       ├── tasks/
+   │       │   └── main.yml
+   └── playbook.yml

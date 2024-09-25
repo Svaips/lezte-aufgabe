@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+  roles:
+    - setup_vm
+
+- hosts: nginx_servers  # Группа с отдающим Nginx
+  become: yes
+  roles:
+    - setup_nginx
+
+- hosts: nginx_proxies  # Группа с проксирующим Nginx
+  become: yes
+  roles:
+    - setup_nginx_proxy

@@ -1,0 +1,17 @@
+---
+- name: Установка необходимых пакетов
+  apt:
+    name:
+      - net-tools
+      - dnsutils
+      - wget
+      - curl
+      - mc
+      - rsync
+    state: present
+    update_cache: yes
+  become: yes
+
+- name: Изменение имени машины
+  command: hostnamectl set-hostname "{{ inventory_hostname }}"
+  when: inventory_hostname != ansible_hostname

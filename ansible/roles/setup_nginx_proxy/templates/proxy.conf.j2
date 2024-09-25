@@ -1,0 +1,18 @@
+http {
+    upstream backend {
+        server 62.84.116.185:80;  # Первый отдающий сервер
+        server 89.169.156.144:80;  # Второй отдающий сервер
+    }
+
+    server {
+        listen 3000;
+
+        location / {
+            proxy_pass http://backend;  # Использование upstream
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+    }
+}
